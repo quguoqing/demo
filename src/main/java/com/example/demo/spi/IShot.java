@@ -7,4 +7,6 @@ package com.example.demo.spi;
  */
 public interface IShot {
 
+    void shout();
+
 }
