@@ -1,15 +1,20 @@
 package com.example.demo.aop;
 
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 /**
  * @author: chunmu
  * @Date: 2019/9/17 21:05
  * @Description:
  */
+@Service
 public class RailwayStation implements TicketService {
 
     @Override
-    public void sellTicket(){
+    public int sellTicket(){
         System.out.println("售票............");
+        return 2;
     }
 
     @Override

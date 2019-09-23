@@ -5,27 +5,27 @@
     xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="ticketServiceBeforeAdvice" class="com.example.demo.aop.TicketServiceBeforeAdvice" />
+    <!--<bean id="ticketServiceBeforeAdvice" class="com.example.demo.aop.TicketServiceBeforeAdvice" />-->
 
-    <bean id="ticketServiceAfterReturningAdvice" class="com.example.demo.aop.TicketServiceAfterReturningAdvice" />
+    <!--<bean id="ticketServiceAfterReturningAdvice" class="com.example.demo.aop.TicketServiceAfterReturningAdvice" />-->
 
-    <!--<bean id="railwayStation2" class="com.example.demo.aop.RailwayStation"></bean>-->
+    <!--&lt;!&ndash;<bean id="railwayStation2" class="com.example.demo.aop.RailwayStation"></bean>&ndash;&gt;-->
 
-    <bean id="testAop" class="org.springframework.aop.framework.ProxyFactoryBean">
-        <property name="proxyInterfaces">
-            <value>com.example.demo.aop.TicketService</value>
-        </property>
+    <!--<bean id="testAop" class="org.springframework.aop.framework.ProxyFactoryBean">-->
+        <!--<property name="proxyInterfaces">-->
+            <!--<value>com.example.demo.aop.TicketService</value>-->
+        <!--</property>-->
 
-        <property name="target">
-            <bean class="com.example.demo.aop.RailwayStation" />
-        </property>
+        <!--<property name="target">-->
+            <!--<bean class="com.example.demo.aop.RailwayStation" />-->
+        <!--</property>-->
 
-        <property name="interceptorNames">
-            <list>
-                <value>ticketServiceBeforeAdvice</value>
-                <value>ticketServiceAfterReturningAdvice</value>
-            </list>
-        </property>
-    </bean>
+        <!--<property name="interceptorNames">-->
+            <!--<list>-->
+                <!--<value>ticketServiceBeforeAdvice</value>-->
+                <!--<value>ticketServiceAfterReturningAdvice</value>-->
+            <!--</list>-->
+        <!--</property>-->
+    <!--</bean>-->
 
 </beans>

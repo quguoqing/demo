@@ -8,7 +8,9 @@ package com.example.demo.aop;
 public interface TicketService {
 
     //售票
-    void sellTicket();
+    default int sellTicket(){
+        return 1;
+    }
 
     //问询
     void inquire();
