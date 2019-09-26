@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
  * @Date: 2019/9/21 16:44
  * @Description:
  */
-@Service
+// @Service
 public class MyDemoBeanPostProcessor implements BeanPostProcessor {
 
     @Override
