@@ -14,15 +14,15 @@ import com.alibaba.dubbo.config.spring.context.annotation.EnableDubbo;
 import com.example.demo.bean.ServiceA;
 
 @SpringBootApplication(exclude= {DataSourceAutoConfiguration.class})
-// @EnableAutoConfiguration
-@EnableDubbo
+@EnableAutoConfiguration
+// @EnableDubbo
 @ImportResource(locations={"classpath*:spring/*.xml"})
 public class DemoApplication {
 
     public static void main(String[] args) throws Throwable{
         ConfigurableApplicationContext context = SpringApplication.run(DemoApplication.class, args);
         System.out.println("main thread=" + Thread.currentThread().getName());
-        new DemoApplication().myStart(context);
+        // new DemoApplication().myStart(context);
         System.out.println("main thread start end");
     }
 

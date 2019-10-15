@@ -13,7 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
  * @Date: 2019/9/16 20:00
  * @Description:
  */
-@Component
+@Service
 // @Transactional
 public class ServiceA {
 
