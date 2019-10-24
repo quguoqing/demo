@@ -1,1 +1,2 @@
-com.example.demo.spi.Dog
+dog=com.example.demo.spi.Dog
+cat=com.example.demo.spi.Cat

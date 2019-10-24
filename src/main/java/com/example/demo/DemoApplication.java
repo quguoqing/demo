@@ -15,7 +15,7 @@ import com.example.demo.bean.ServiceA;
 
 @SpringBootApplication(exclude= {DataSourceAutoConfiguration.class})
 @EnableAutoConfiguration
-// @EnableDubbo
+@EnableDubbo
 @ImportResource(locations={"classpath*:spring/*.xml"})
 public class DemoApplication {
 

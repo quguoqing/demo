@@ -9,7 +9,7 @@
 
     <bean id="ticketServiceAfterReturningAdvice" class="com.example.demo.aop.TicketServiceAfterReturningAdvice" />
 
-    <bean id="serviceA" class="com.example.demo.bean.ServiceA" />
+    <!--<bean id="serviceA" class="com.example.demo.bean.ServiceA" />-->
 
 
     <!--&lt;!&ndash;<bean id="railwayStation2" class="com.example.demo.aop.RailwayStation"></bean>&ndash;&gt;-->
