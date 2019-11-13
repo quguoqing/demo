@@ -11,6 +11,7 @@ import com.alibaba.dubbo.common.extension.SPI;
 @SPI
 public interface IShot {
 
+    @Adaptive
     void shout();
 
 }

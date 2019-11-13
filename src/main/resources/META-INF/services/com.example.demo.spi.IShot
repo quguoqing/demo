@@ -1,2 +1,8 @@
-dog=com.example.demo.spi.Dog
-cat=com.example.demo.spi.Cat
+
+#java spi
+com.example.demo.spi.Dog
+com.example.demo.spi.Cat
+
+#dubbo spi
+#dog=com.example.demo.spi.Dog
+#cat=com.example.demo.spi.Cat
