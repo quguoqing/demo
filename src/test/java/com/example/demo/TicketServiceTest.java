@@ -9,7 +9,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import com.example.demo.aop.RailwayStation;
 import com.example.demo.aop.TicketService;
-import com.example.demo.bean.ServiceA;
+// import com.example.demo.bean.ServiceA;
 
 /**
  * @author: chunmu
@@ -27,7 +27,7 @@ public class TicketServiceTest {
     private RailwayStation railwayStation;
 
     @Resource
-    private ServiceA serviceA;
+    // private ServiceA serviceA;
 
     @Test
     public void test_inquire(){
@@ -36,7 +36,7 @@ public class TicketServiceTest {
 
     @Test
     public void test_hello(){
-        serviceA.hello();
+        // serviceA.hello();
     }
 
 }

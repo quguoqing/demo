@@ -21,7 +21,7 @@ import org.springframework.stereotype.Service;
 public class ServiceB {
 
     @Autowired
-    ServiceA serviceA;
+    // ServiceA serviceA;
 
 
     public static void main(String[] args){
