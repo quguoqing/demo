@@ -1,9 +1,15 @@
 package com.example.demo.classloader;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 // import com.example.demo.bean.ServiceA;
+
+import com.alibaba.dubbo.common.json.JSON;
+import com.fasterxml.jackson.databind.util.JSONPObject;
 
 import sun.awt.motif.X11GBK;
 import sun.util.resources.cldr.aa.CalendarData_aa_ET;
@@ -15,7 +21,7 @@ import sun.util.resources.cldr.aa.CalendarData_aa_ET;
  */
 public class ClassLoaderTest {
 
-    public static void main(String[] args){
+    public static void main(String[] args) throws Exception{
         // System.out.println(System.getProperty("sun.boot.class.path"));
         // System.out.println(System.getProperty("java.ext.dirs"));
         // ClassLoader result1 = HashMap.class.getClassLoader();
@@ -38,6 +44,17 @@ public class ClassLoaderTest {
         }catch (ClassNotFoundException e){
             e.printStackTrace();
         }
+
+        Map<String, String> map = new LinkedHashMap<>();
+        map.put("a", "a");
+
+        map.entrySet().iterator();
+
+
+        List<String> result = new ArrayList<>();
+        result.add("1102");
+        result.add("1130");
+        System.out.println(JSON.json(result));
     }
 
 }
