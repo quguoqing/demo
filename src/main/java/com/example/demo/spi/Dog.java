@@ -61,7 +61,7 @@ public class Dog implements IShot {
     // }
 
     private IShot get(){
-        IShot result1 = new Cat();
+        // IShot result1 = new Cat();
         IShot result2 = new Dog();
         BigDecimal b1 = BigDecimal.ZERO;
         IShot result3 = new IShot(){
@@ -69,7 +69,7 @@ public class Dog implements IShot {
             @Override
             public void shout() {
                 b1.toString();
-                result1.shout();
+                // result1.shout();
                 result2.shout();
             }
         };

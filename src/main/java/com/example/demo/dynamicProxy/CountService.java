@@ -9,4 +9,6 @@ public interface CountService {
 
     int count();
 
+    default int count(int a){return a;}
+
 }

@@ -9,9 +9,11 @@ import java.util.Map;
 // import com.example.demo.bean.ServiceA;
 
 import com.alibaba.dubbo.common.json.JSON;
+import com.example.demo.bean.ServiceA;
 import com.fasterxml.jackson.databind.util.JSONPObject;
 
 import sun.awt.motif.X11GBK;
+import sun.tools.jconsole.JConsole;
 import sun.util.resources.cldr.aa.CalendarData_aa_ET;
 
 /**
@@ -22,19 +24,22 @@ import sun.util.resources.cldr.aa.CalendarData_aa_ET;
 public class ClassLoaderTest {
 
     public static void main(String[] args) throws Exception{
-        // System.out.println(System.getProperty("sun.boot.class.path"));
-        // System.out.println(System.getProperty("java.ext.dirs"));
-        // ClassLoader result1 = HashMap.class.getClassLoader();
-        // System.out.println(result1);
-        //
-        // ClassLoader result3 = X11GBK.class.getClassLoader();
-        // System.out.println(result3);
-        //
-        // ClassLoader result4 = CalendarData_aa_ET.class.getClassLoader();
-        // System.out.println(result4);
+        System.out.println(System.getProperty("sun.boot.class.path"));
+        System.out.println(System.getProperty("java.ext.dirs"));
+        ClassLoader result1 = HashMap.class.getClassLoader();
+        System.out.println(result1);
 
-        // ClassLoader result2 = ServiceA.class.getClassLoader();
-        // System.out.println(result2);
+        ClassLoader result3 = X11GBK.class.getClassLoader();
+        System.out.println(result3);
+
+        ClassLoader result4 = CalendarData_aa_ET.class.getClassLoader();
+        System.out.println(result4);
+
+        ClassLoader result2 = ServiceA.class.getClassLoader();
+        System.out.println(result2);
+
+        ClassLoader result6 = JConsole.class.getClassLoader();
+        System.out.println(result6);
 
         MyClassLoader myClassLoader = new MyClassLoader("/Users/quguoqing/Documents");
         try{

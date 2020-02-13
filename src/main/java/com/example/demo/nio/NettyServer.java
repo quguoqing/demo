@@ -18,45 +18,45 @@ import io.netty.handler.codec.string.StringDecoder;
  */
 public class NettyServer {
 
-    // public static void main1(String[] args){
-    //     ServerBootstrap serverBootstrap = new ServerBootstrap();
-    //
-    //     NioEventLoopGroup boss = new NioEventLoopGroup();
-    //     NioEventLoopGroup worker = new NioEventLoopGroup();
-    //     serverBootstrap.group(boss, worker)
-    //             .channel(NioServerSocketChannel.class)
-    //             .childHandler(new ChannelInitializer<NioSocketChannel>() {
-    //                 @Override
-    //                 protected void initChannel(NioSocketChannel nioSocketChannel) throws Exception {
-    //                     nioSocketChannel.pipeline().addLast(new StringDecoder());
-    //                     nioSocketChannel.pipeline().addLast(new SimpleChannelInboundHandler<String>() {
-    //                         @Override
-    //                         protected void channelRead0(ChannelHandlerContext channelHandlerContext,
-    //                                 String s) throws Exception {
-    //                             System.out.println(s);
-    //                         }
-    //                     });
-    //                 }
-    //             }).bind(8000);
-    // }
+    public static void main(String[] args){
+        ServerBootstrap serverBootstrap = new ServerBootstrap();
 
-    private static final int MAXSIZE = 65535;
-
-    public static void main(String args[]) {
-
-        Selector[] sels = new Selector[MAXSIZE];
-        try {
-
-            for (int i = 0; i < MAXSIZE; ++i) {
-
-                sels[i] = Selector.open();
-
-                //sels[i].close();
-
-            }
-
-            Thread.sleep(30000);
-        } catch (Exception ex) {
-        }
+        NioEventLoopGroup boss = new NioEventLoopGroup();
+        NioEventLoopGroup worker = new NioEventLoopGroup();
+        serverBootstrap.group(boss, worker)
+                .channel(NioServerSocketChannel.class)
+                .childHandler(new ChannelInitializer<NioSocketChannel>() {
+                    @Override
+                    protected void initChannel(NioSocketChannel nioSocketChannel) throws Exception {
+                        nioSocketChannel.pipeline().addLast(new StringDecoder());
+                        nioSocketChannel.pipeline().addLast(new SimpleChannelInboundHandler<String>() {
+                            @Override
+                            protected void channelRead0(ChannelHandlerContext channelHandlerContext,
+                                    String s) throws Exception {
+                                System.out.println(s);
+                            }
+                        });
+                    }
+                }).bind(8000);
     }
+
+    // private static final int MAXSIZE = 65535;
+    //
+    // public static void main(String args[]) {
+    //
+    //     Selector[] sels = new Selector[MAXSIZE];
+    //     try {
+    //
+    //         for (int i = 0; i < MAXSIZE; ++i) {
+    //
+    //             sels[i] = Selector.open();
+    //
+    //             //sels[i].close();
+    //
+    //         }
+    //
+    //         Thread.sleep(30000);
+    //     } catch (Exception ex) {
+    //     }
+    // }
 }

@@ -31,6 +31,9 @@ import javassist.util.proxy.ProxyObject;
 public class DynamicProxyPerformanceTest {
 
     public static void main(String[] args) throws Exception {
+
+        CountService countService = createDubboBytecode(CountService.class);
+
         CountService delegate = new CountServiceImpl();
 
         long time = System.currentTimeMillis();
@@ -196,6 +199,11 @@ public class DynamicProxyPerformanceTest {
         Field filed = bytecodeProxy.getClass().getField("delegate");
         filed.set(bytecodeProxy, delegate);
         return bytecodeProxy;
+    }
+
+    private static CountService createDubboBytecode(Class c){
+        com.alibaba.dubbo.common.bytecode.Proxy  proxy = com.alibaba.dubbo.common.bytecode.Proxy.getProxy(c);
+        return (CountService)proxy.newInstance();
     }
 
     private static class ByteArrayClassLoader extends ClassLoader {

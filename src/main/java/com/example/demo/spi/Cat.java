@@ -6,6 +6,10 @@ package com.example.demo.spi;
  * @Description:
  */
 public class Cat implements IShot {
+
+    public Cat(String a){
+        System.out.println("构造函数" + a);
+    }
     //cat object size least 16Byte, mark world size 32bit=4Byte(32bit JVM)
 
     // private int a = 1;
@@ -18,7 +22,12 @@ public class Cat implements IShot {
     }
 
     public static void main(String[] args) throws Exception{
-        Cat cat = new Cat();
-        Thread.sleep(1000000L);
+        Cat cat = new Cat("你好");
+        Cat cat1 = Cat.class.getConstructor(String.class).newInstance("春木");
+        Cat cat2 = Cat.class.newInstance();
+        System.out.println(cat.toString());
+        System.out.println(cat1.toString());
+        System.out.println(cat2.toString());
+        // Thread.sleep(1000000L);
     }
 }
