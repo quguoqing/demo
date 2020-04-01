@@ -5,7 +5,7 @@ import java.util.concurrent.atomic.AtomicReference;
 /**
  * @author: chunmu
  * @Date: 2019/11/19 21:39
- * @Description:
+ * @Description: 阿里面试题
  */
 public class MyQueue {
     private AtomicReference<Node> head = new AtomicReference();
@@ -62,7 +62,7 @@ public class MyQueue {
             if(current.compareAndSet(old, newValue)){
                 break;
             }
-            Thread.sleep(10L);
+            // Thread.sleep(10L);
         }
     }
 

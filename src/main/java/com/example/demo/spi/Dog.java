@@ -26,12 +26,12 @@ public class Dog implements IShot {
      */
     public static void main(String[] args){
         ServiceLoader<IShot> shotServiceLoader = ServiceLoader.load(IShot.class);
-        shotServiceLoader.forEach(IShot::shout);
-        // Iterator iterator = shotServiceLoader.iterator();
-        // while(iterator.hasNext()){
-        //     IShot shot = (IShot) iterator.next();
-        //     shot.shout();
-        // }
+        // shotServiceLoader.forEach(IShot::shout);
+        Iterator iterator = shotServiceLoader.iterator();
+        while(iterator.hasNext()){
+            IShot shot = (IShot) iterator.next();
+            shot.shout();
+        }
     }
 
     /**

@@ -7,6 +7,8 @@ package com.example.demo.spi;
  */
 public class Cat implements IShot {
 
+    public Cat(){};
+
     public Cat(String a){
         System.out.println("构造函数" + a);
     }
