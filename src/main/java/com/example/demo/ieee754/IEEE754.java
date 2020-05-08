@@ -32,8 +32,10 @@ public class IEEE754 {
         double a = 0.2;
         BigDecimal ad = new BigDecimal(a);
         BigDecimal ads = new BigDecimal(String.valueOf(a));
-        System.out.println("a=" + a);
         double b = 0.1;
+
+        System.out.println("a=" + a);
+        System.out.println("b=" + b);
         BigDecimal bd = new BigDecimal(b);
         BigDecimal bds = new BigDecimal(String.valueOf(b));
 

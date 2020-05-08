@@ -1,6 +1,9 @@
 package com.example.demo;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Hashtable;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -10,7 +13,16 @@ import java.util.Map;
  */
 public class HelloWorld {
 
+
     public static void main(String[] args){
+        Map<String, Integer> map = new HashMap<>();
+        Integer b = (null != map ? map.get("test") : Integer.valueOf(1));
+    }
+
+
+    public static void main1(String[] args){
+        String abc = "ABC";
+
         char[] a = new char[3];
         a[0] = '国';
         for(char i : a){
@@ -59,6 +71,17 @@ public class HelloWorld {
         System.out.printf("0x%x is HighSurrogate:"+Character.isHighSurrogate(codeUnits[1])+ "\n",(int)codeUnits[1]);
         System.out.printf("0x%x is LowSurrogate:"+Character.isLowSurrogate(codeUnits[0])+"\n", (int)codeUnits[0]);
         System.out.printf("0x%x is LowSurrogate:"+Character.isLowSurrogate(codeUnits[1])+"\n", (int)codeUnits[1]);
+
+        List<Person> people = new ArrayList<>();
+        while (true){
+            people.add(new Person(18, 14, 'a'));
+            try{
+                Thread.sleep(10L);
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+
+        }
     }
 
     static class Person{
