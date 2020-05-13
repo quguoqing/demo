@@ -17,6 +17,9 @@ public class HelloWorld {
     public static void main(String[] args){
         Map<String, Integer> map = new HashMap<>();
         Integer b = (null != map ? map.get("test") : Integer.valueOf(1));
+
+        String str = "a \nb";
+        System.out.println(str);
     }
 
 
