@@ -1,5 +1,8 @@
 package com.example.demo;
 
+import java.io.BufferedInputStream;
+import java.io.File;
+import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Hashtable;
@@ -15,11 +18,40 @@ public class HelloWorld {
 
 
     public static void main(String[] args){
-        Map<String, Integer> map = new HashMap<>();
-        Integer b = (null != map ? map.get("test") : Integer.valueOf(1));
+        // Map<String, Integer> map = new HashMap<>();
+        // Integer b = (null != map ? map.get("test") : Integer.valueOf(1));
+        //
+        // String str = "a \nb";
+        // System.out.println(str);
+        //
+        // try(BufferedInputStream in = new BufferedInputStream(new FileInputStream(new File("XXXX")))){
+        //     in.read();
+        // }catch (Exception e){
+        //
+        // }
+        // int i = 0;
+        // try{
+        //     i = 1;
+        //     System.out.println(i);
+        //     throw new RuntimeException("try报错");
+        // }catch (Exception e){
+        //     System.out.println(e.toString());
+        //     // throw new RuntimeException("catch报错");
+        // }finally {
+        //     System.out.println("finally报错");
+        //     if(true){
+        //         throw new RuntimeException("finally报错");
+        //     }
+        //     System.out.println("finally报错2");
+        // }
 
-        String str = "a \nb";
-        System.out.println(str);
+        System.out.println("Byte.SIZE=" + Byte.SIZE / 8);
+        System.out.println("Character.SIZE=" + Character.SIZE / 8);
+        System.out.println("Short.SIZE=" + Short.SIZE / 8);
+        System.out.println("Integer.SIZE=" + Integer.SIZE / 8);
+        System.out.println("Long.SIZE=" + Long.SIZE / 8);
+        System.out.println("Float.SIZE=" + Float.SIZE / 8);
+        System.out.println("Double.SIZE=" + Double.SIZE / 8);
     }
 
 

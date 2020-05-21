@@ -13,7 +13,7 @@ public class ThreadLocalTest {
             SimpleDateFormat("yyyy/MM/dd"));
 
     private static final ThreadLocal<SimpleDateFormat> FORMATTER1 = ThreadLocal.withInitial(() -> new
-            SimpleDateFormat("yyyy/MM/dd"));
+            SimpleDateFormat("yyyyMMdd"));
 
     public static void main(String[] args){
         SimpleDateFormat sdf1 = FORMATTER.get();
