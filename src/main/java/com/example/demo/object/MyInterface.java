@@ -9,4 +9,6 @@ public interface MyInterface {
 
     int hello();
 
+    int helloWorld();
+
 }

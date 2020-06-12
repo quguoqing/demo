@@ -16,12 +16,22 @@ public class InnerClassTest {
             @Override
             public int hello() {
                 b.setA(3);
-                return 0;
+                return b.getA();
+            }
+
+            @Override
+            public int helloWorld() {
+                b.setA(4);
+                return b.getA();
             }
         };
 
         System.out.print(target.hello());
-
+        try {
+            Thread.sleep(Integer.MAX_VALUE);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
 
