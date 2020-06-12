@@ -8,9 +8,23 @@ package com.example.demo.object;
 public class InnerClassTest {
 
     public static void main(String[] args){
-        InnerClassTest classTest = new InnerClassTest();
-        classTest.process(18, "张三");
+        // InnerClassTest classTest = new InnerClassTest();
+        // classTest.process(18, "张三");
+
+        final ClassB  b = new ClassB(2);
+        MyInterface target = new MyInterface(){
+            @Override
+            public int hello() {
+                b.setA(3);
+                return 0;
+            }
+        };
+
+        System.out.print(target.hello());
+
     }
+
+
 
     private void process(int age, String name){
         InnerClass ic = new InnerClass();
@@ -18,6 +32,8 @@ public class InnerClassTest {
         ic.setName(name);
         System.out.println(ic);
     }
+
+
 
     class InnerClass {
 

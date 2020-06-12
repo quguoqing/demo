@@ -57,6 +57,7 @@ public class MultiplexerTimerServer implements Runnable {
                     key = it.next();
                     it.remove();
                     try{
+                        //这个是单线程模型的reactor模型，如果要改为多线程模型，handleInput放到线程池执行
                         handleInput(key);
                     }catch (Exception e){
                         if(null != key){
