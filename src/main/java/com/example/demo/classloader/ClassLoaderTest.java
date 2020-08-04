@@ -44,8 +44,10 @@ public class ClassLoaderTest {
         MyClassLoader myClassLoader = new MyClassLoader("/Users/quguoqing/Documents");
         try{
             //如果删除本工程中的ServiceA类，那么类加载器就是MyClassLoader。否则由于loanClass使用了双亲委派，就会AppClassLoader
-            ClassLoader myClass = myClassLoader.loadClass("com.example.demo.bean.ServiceA").getClassLoader();
+            Class clazz = myClassLoader.loadClass("com.example.demo.bean.ServiceA");
+            ClassLoader myClass = clazz.getClassLoader();
             System.out.println(myClass);
+            clazz.newInstance();
         }catch (ClassNotFoundException e){
             e.printStackTrace();
         }
@@ -60,6 +62,14 @@ public class ClassLoaderTest {
         result.add("1102");
         result.add("1130");
         System.out.println(JSON.json(result));
+
+        System.out.println("=========");
+        myClassLoader = null;
+
+        System.gc();
+        Thread.sleep(1000);
+        System.out.println("=========");
+
     }
 
 }

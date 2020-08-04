@@ -9,8 +9,8 @@ import org.springframework.context.annotation.Configuration;
  * @Description:
  */
 
-@Configuration
-@ComponentScan("com.example.demo.spring")
+// @Configuration
+// @ComponentScan("com.example.demo.spring")
 public class AppConfig {
 
 

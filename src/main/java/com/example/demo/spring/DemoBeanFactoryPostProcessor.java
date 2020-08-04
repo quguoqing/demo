@@ -18,9 +18,7 @@ public class DemoBeanFactoryPostProcessor implements BeanFactoryPostProcessor {
     @Override
     public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory)
             throws BeansException {
-        GenericBeanDefinition definition = (GenericBeanDefinition)beanFactory.getBeanDefinition("a");
-        System.out.println(definition.getBeanClassName());
-        definition.setBeanClass(B.class);
+        System.out.println("执行了***DemoBeanFactoryPostProcessor.postProcessBeanFactory()***");
 
     }
 }

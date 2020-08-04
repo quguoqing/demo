@@ -8,30 +8,8 @@ package com.example.demo.object;
 public class InnerClassTest {
 
     public static void main(String[] args){
-        // InnerClassTest classTest = new InnerClassTest();
-        // classTest.process(18, "张三");
-
-        final ClassB  b = new ClassB(2);
-        MyInterface target = new MyInterface(){
-            @Override
-            public int hello() {
-                b.setA(3);
-                return b.getA();
-            }
-
-            @Override
-            public int helloWorld() {
-                b.setA(4);
-                return b.getA();
-            }
-        };
-
-        System.out.print(target.hello());
-        try {
-            Thread.sleep(Integer.MAX_VALUE);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        InnerClassTest classTest = new InnerClassTest();
+        classTest.process(18, "张三");
     }
 
 

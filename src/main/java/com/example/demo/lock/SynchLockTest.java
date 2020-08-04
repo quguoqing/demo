@@ -9,13 +9,23 @@ public class SynchLockTest {
 
     private static int share = 0;
 
+    private static volatile int a = 0;
+
+    public static void main(String[] args){
+        a += 1;
+        System.out.println(a);
+    }
 
 
-    public static void main(String[] args) {
+    public static void main1(String[] args) {
         int[] nums = new int[2];
         nums[0] = 1;
         nums[1] = 0;
         solution1(nums);
+
+        a++;
+        int b = 0;
+        System.out.print(a);
     }
 
 

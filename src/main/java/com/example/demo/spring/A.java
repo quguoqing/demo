@@ -7,7 +7,14 @@ import org.springframework.stereotype.Component;
  * @Date: 2020/5/19 23:15
  * @Description:
  */
-@Component
+
 public class A {
+
+    public Integer a = 0;
+
+    public A(){
+        a = 1;
+        System.out.println("A class init");
+    }
 
 }

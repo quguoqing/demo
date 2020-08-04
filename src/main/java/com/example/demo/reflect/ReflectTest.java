@@ -19,7 +19,34 @@ public class ReflectTest {
         // testMethod("com.example.demo.reflect.ReflectTest$Person");
         // testFileds("com.example.demo.reflect.ReflectTest$Person");
 
-        instance("com.example.demo.reflect.Person");
+        // instance("com.example.demo.reflect.Person");
+
+        for(int i=0; i<10; i++){
+            System.out.println("start " + i + "test...");
+            testRelectInvokeSpendTime();
+        }
+    }
+
+    private static void  testRelectInvokeSpendTime()
+            throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+        Person person = new Person("qgq", 1);
+        int num = 1000000;
+        int age1 = 0;
+        Long start = System.currentTimeMillis();
+        for(int i=0; i<num; i++){
+            age1 = person.getAge() + age1;
+
+        }
+        System.out.println("common invoke age1=" + age1 + ",spend=" + (System.currentTimeMillis() - start) + "ms");
+
+        Method method = person.getClass().getMethod("getAge",null);
+        int age2 = 0;
+        Long start1 = System.currentTimeMillis();
+        for(int i=0; i<num; i++){
+            int age = (int)method.invoke(person);
+            age2 = age2 + age;
+        }
+        System.out.println("reflect invoke age2=" + age2 + ",spend=" + (System.currentTimeMillis() - start1) + "ms");
     }
 
     public static void testContructor(String className) throws ClassNotFoundException {

@@ -1,6 +1,8 @@
 package com.example.demo.spring;
 
+import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
@@ -8,7 +10,8 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  * @Date: 2020/5/19 23:06
  * @Description:
  */
-public class DemoSpringApplication {
+public class DemoSpringApplication implements ApplicationContextAware {
+    private static ApplicationContext context;
 
     public static void main(String[] args){
 
@@ -18,4 +21,8 @@ public class DemoSpringApplication {
         System.out.println(context.getBean("CFactory"));
     }
 
+    @Override
+    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+        context = applicationContext;
+    }
 }
